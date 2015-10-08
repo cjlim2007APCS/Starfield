@@ -69,31 +69,9 @@ class OddballParticle implements Particle
 		ellipse((float)x, (float)y, 20, 20);
 	}
 }
-class JumboParticle implements Particle
+class JumboParticle extends NormalParticle
 {
-	double x,y,speed,angle;
-	int rColor, gColor,bColor;
-	JumboParticle() {
-		x = 250;
-		y = 250;
-		speed = 7;
-		angle = Math.random()*2*Math.PI;
-		rColor = (int)(Math.random()*256);
-		gColor = (int)(Math.random()*256);
-		bColor = (int)(Math.random()*256);
-	}
-	public void move() {
-		x = (Math.cos(angle) * speed) + x;
-		y = (Math.sin(angle) * speed) + y;
-		if (x<=0 || x>=500 || y<=0 || y>=500) {
-			x = 250;
-			y = 250;
-			speed = 7;
-			angle = Math.random()*2*Math.PI;
-		}
-	}
 	public void show() {
-		fill(rColor,gColor,bColor);
 		ellipse((float)x, (float)y, 25, 25);
 	}
 
